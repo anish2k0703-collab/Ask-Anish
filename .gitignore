@@ -1,0 +1,49 @@
+# Secrets and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Private RAG source material and generated indexes
+documents/**
+!documents/
+!documents/README.md
+vector_store/
+*.pdf
+
+# Runtime/generated files
+logs/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.db-shm
+*.db-wal
+conversation_cache/
+tmp/
+temp/
+.cache/
+
+# Local editor and OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Deployment/local artifacts
+.render/
+dist/
+build/
+coverage/

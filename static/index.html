@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Ask Anish, Anish Kulkarni's grounded AI digital twin."
+    />
+    <title>Ask Anish — Anish Kulkarni’s Digital Twin</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+    <script defer src="/static/app.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Ask Anish home">
+          <span class="brand-avatar" aria-hidden="true">
+            <img src="/static/assets/anish-avatar-chat.png" alt="" />
+            <span>A</span>
+          </span>
+          <span>
+            <strong>Ask Anish</strong>
+            <small>Digital Twin of Anish Kulkarni</small>
+          </span>
+        </a>
+        <nav class="top-actions" aria-label="Primary">
+          <span class="status"><i></i>Available for questions</span>
+          <button class="ghost-button" id="how-button" type="button">How it works</button>
+          <div class="menu-wrap">
+            <button class="ghost-button" id="menu-button" type="button" aria-expanded="false">
+              More
+            </button>
+            <div class="menu" id="menu" hidden>
+              <button id="regenerate-button" type="button">Regenerate last answer</button>
+              <button id="clear-button" type="button">Clear conversation</button>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main class="chat-layout">
+        <section class="welcome" id="welcome" aria-labelledby="welcome-title">
+          <div class="welcome-avatar-frame">
+            <img
+              class="welcome-avatar"
+              src="/static/assets/anish-avatar-welcome.png"
+              alt="AI avatar of Anish"
+            />
+          </div>
+          <div class="welcome-copy">
+            <div class="trust-badge">RAG-powered · Grounded in verified sources</div>
+            <h1 id="welcome-title">Ask Anish</h1>
+            <p>
+              My source-grounded digital twin. Ask about my experience, projects,
+              technical skills, research, teaching, or career journey.
+            </p>
+            <div class="suggestions" id="welcome-suggestions" aria-label="Suggested questions">
+              <button type="button">What makes Anish a strong fit for an AI or data role?</button>
+              <button type="button">Tell me about Anish’s most impactful projects.</button>
+              <button type="button">How does Anish combine technology and business?</button>
+              <button type="button">What is Anish like to work with?</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="messages" id="messages" aria-live="polite" aria-label="Conversation"></section>
+        <section class="followups" id="followups" aria-label="Follow-up suggestions"></section>
+      </main>
+
+      <form class="composer" id="composer">
+        <label class="sr-only" for="message-input">Ask Anish anything</label>
+        <textarea
+          id="message-input"
+          name="message"
+          rows="1"
+          maxlength="4000"
+          placeholder="Ask Anish anything…"
+        ></textarea>
+        <button class="send-button" id="send-button" type="submit" aria-label="Send message">
+          <span>Send</span>
+        </button>
+        <button class="stop-button" id="stop-button" type="button" hidden>Stop</button>
+      </form>
+      <p class="composer-hint">Enter to send · Shift+Enter for a new line</p>
+    </div>
+
+    <div class="modal-backdrop" id="modal" hidden>
+      <section
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <button class="modal-close" id="modal-close" type="button" aria-label="Close">
+          ×
+        </button>
+        <p class="eyebrow">Grounded AI</p>
+        <h2 id="modal-title">How Ask Anish works</h2>
+        <p>
+          Ask Anish uses retrieval-augmented generation, or RAG, to retrieve
+          relevant information from Anish’s verified professional sources before
+          generating an answer. This keeps responses specific, traceable, and
+          grounded in his real experience.
+        </p>
+        <div class="flow" aria-label="RAG flow">
+          <span>Verified sources</span>
+          <i></i>
+          <span>Relevant context</span>
+          <i></i>
+          <span>Grounded answer</span>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

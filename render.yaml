@@ -1,0 +1,35 @@
+services:
+  - type: web
+    name: ask-anish
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python ingest.py
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: MODEL_NAME
+        value: gpt-5.4-mini
+      - key: EMBEDDING_MODEL
+        value: text-embedding-3-small
+      - key: MAX_OUTPUT_TOKENS
+        value: "700"
+      - key: OPENAI_TIMEOUT_SECONDS
+        value: "30"
+      - key: GITHUB_USERNAME
+        sync: false
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_MAX_REPOS
+        value: "12"
+      - key: GITHUB_INCLUDE_FORKS
+        value: "false"
+      - key: MAX_QUESTION_CHARS
+        value: "1200"
+      - key: RATE_LIMIT_REQUESTS
+        value: "20"
+      - key: RATE_LIMIT_WINDOW_SECONDS
+        value: "3600"
+      - key: ALLOWED_ORIGINS
+        sync: false
