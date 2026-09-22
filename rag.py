@@ -21,6 +21,7 @@ VECTOR_DIR = ROOT / "vector_store"
 INDEX_PATH = VECTOR_DIR / "career_index.json"
 
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "text-embedding-3-small")
+OPENAI_TIMEOUT_SECONDS = float(os.getenv("OPENAI_TIMEOUT_SECONDS", "30"))
 CHUNK_WORDS = int(os.getenv("RAG_CHUNK_WORDS", "420"))
 CHUNK_OVERLAP = int(os.getenv("RAG_CHUNK_OVERLAP", "80"))
 TOP_K = int(os.getenv("RAG_TOP_K", "6"))
@@ -304,7 +305,7 @@ def build_index(force: bool = False) -> dict:
         save_index(index)
         return index
 
-    client = OpenAI()
+    client = OpenAI(timeout=OPENAI_TIMEOUT_SECONDS)
     embeddings = embed_texts(client, [chunk["text"] for chunk in chunks])
     if len(chunks) != len(embeddings):
         raise RuntimeError("Embedding count did not match chunk count.")
@@ -349,7 +350,7 @@ def retrieve(question: str, top_k: int = TOP_K) -> list[RetrievedChunk]:
     if not chunks:
         return []
 
-    client = OpenAI()
+    client = OpenAI(timeout=OPENAI_TIMEOUT_SECONDS)
     query_embedding = client.embeddings.create(
         model=index.get("embedding_model", EMBEDDING_MODEL),
         input=question,

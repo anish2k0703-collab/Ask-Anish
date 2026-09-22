@@ -6,7 +6,11 @@ A source-grounded digital assistant built with FastAPI, RAG, streaming responses
 
 ## Live Demo
 
-Deployment pending review. Add the Render URL here after the private repository and security review are complete.
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/anish2k0703-collab/Ask-Anish)
+
+Live demo URL: pending Render service creation and secret entry.
+
+Render's free web service may need a short cold start after periods of inactivity.
 
 ## Overview
 
@@ -88,6 +92,7 @@ The assistant is instructed not to fabricate percentages, revenue, user counts, 
 ├── static/                # Frontend and avatar assets
 ├── documents/README.md    # Local source-document instructions
 ├── docs/                  # Architecture, deployment, troubleshooting, screenshots
+├── .python-version        # Local Python version hint
 ├── render.yaml            # Render web-service configuration
 ├── runtime.txt            # Python runtime hint
 └── requirements.txt       # Python dependencies
@@ -204,6 +209,8 @@ Health-check path:
 ```
 
 Add secrets through Render environment variables, never through files. At minimum, configure `OPENAI_API_KEY`, `GITHUB_USERNAME`, and `ALLOWED_ORIGINS` after Render gives you the service URL.
+
+The included Blueprint uses Render's free web service plan, binds Uvicorn to `0.0.0.0`, reads Render's `$PORT`, builds a fresh index during deployment from committed public-safe sources plus optional GitHub metadata, and exposes `/health` for Render health checks.
 
 ## Development Challenges And Solutions
 
