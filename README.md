@@ -258,8 +258,7 @@ I learned that building a useful digital twin is less about making a chatbot sou
 Anish Kulkarni
 
 - GitHub: `https://github.com/anish2k0703-collab`
-- LinkedIn: add verified profile URL before public release
-- Portfolio: add URL when available
+- LinkedIn: `https://www.linkedin.com/in/anish-kulkarni-7892bb247`
 
 ## License Status
 
