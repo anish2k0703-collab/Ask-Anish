@@ -6,9 +6,11 @@ A source-grounded digital assistant built with FastAPI, RAG, streaming responses
 
 ## Live Demo
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/anish2k0703-collab/Ask-Anish)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Ask%20Anish-8b5cf6?style=for-the-badge)](https://ask-anish.onrender.com/)
 
-Live demo URL: pending Render service creation and secret entry.
+Live demo URL: https://ask-anish.onrender.com/
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/anish2k0703-collab/Ask-Anish)
 
 Render's free web service may need a short cold start after periods of inactivity.
 
