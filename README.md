@@ -260,6 +260,4 @@ Anish Kulkarni
 - GitHub: `https://github.com/anish2k0703-collab`
 - LinkedIn: `https://www.linkedin.com/in/anish-kulkarni-7892bb247`
 
-## License Status
 
-No open-source license has been selected yet. Until a license is added, all rights are reserved by the author.
