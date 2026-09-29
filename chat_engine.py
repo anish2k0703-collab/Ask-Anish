@@ -122,6 +122,9 @@ def friendly_source_title(chunk: RetrievedChunk) -> str:
     if "linkedin" in lowered:
         return "LinkedIn - Experience"
 
+    if "public_sources" in lowered and "project" in lowered:
+        return "Anish Kulkarni - Public Project Highlights"
+
     if "breast" in lowered or "cancer" in lowered:
         return "Breast Cancer Classification Research"
 

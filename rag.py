@@ -17,6 +17,7 @@ load_dotenv(override=True)
 
 ROOT = Path(__file__).resolve().parent
 DOCUMENTS_DIR = ROOT / "documents"
+PUBLIC_SOURCES_DIR = ROOT / "public_sources"
 VECTOR_DIR = ROOT / "vector_store"
 INDEX_PATH = VECTOR_DIR / "career_index.json"
 
@@ -56,6 +57,11 @@ def discover_source_files() -> list[Path]:
     for path in [ROOT / "summary.txt", ROOT / "linkedin.pdf"]:
         if path.exists():
             files.append(path)
+
+    if PUBLIC_SOURCES_DIR.exists():
+        for path in PUBLIC_SOURCES_DIR.rglob("*"):
+            if path.is_file() and path.suffix.lower() in SUPPORTED_EXTENSIONS:
+                files.append(path)
 
     if DOCUMENTS_DIR.exists():
         for path in DOCUMENTS_DIR.rglob("*"):

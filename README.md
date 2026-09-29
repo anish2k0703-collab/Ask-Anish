@@ -92,6 +92,7 @@ The assistant is instructed not to fabricate percentages, revenue, user counts, 
 ├── rag.py                 # Source discovery, parsing, embeddings, retrieval
 ├── tools.py               # Optional contact and unknown-question notification tools
 ├── static/                # Frontend and avatar assets
+├── public_sources/        # Public-safe RAG sources committed for deployment
 ├── documents/README.md    # Local source-document instructions
 ├── docs/                  # Architecture, deployment, troubleshooting, screenshots
 ├── .python-version        # Local Python version hint
@@ -162,7 +163,7 @@ uvicorn app:app --reload --host 127.0.0.1 --port 8000
 
 ## Ingestion And Index Building
 
-Private source documents are not committed. Add approved local files under `documents/`, then run:
+Public-safe production evidence can be committed under `public_sources/`. Private source documents are not committed. Add approved local files under `documents/`, then run:
 
 ```bash
 python ingest.py
