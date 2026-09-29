@@ -36,7 +36,7 @@ The goal is not to build a portfolio page. The project is a focused conversation
 
 ## How The RAG Pipeline Works
 
-1. Approved source files are placed in `documents/` locally, or GitHub ingestion is configured with `GITHUB_USERNAME`.
+1. Public-safe source files are committed in `public_sources/`; private local source files can be placed in `documents/`; GitHub ingestion can be configured with `GITHUB_USERNAME`.
 2. `ingest.py` calls `rag.build_index()`.
 3. `rag.py` extracts text from supported files, chunks source text, embeds chunks with OpenAI embeddings, and writes `vector_store/career_index.json`.
 4. A user asks a question through the frontend.
@@ -163,7 +163,7 @@ uvicorn app:app --reload --host 127.0.0.1 --port 8000
 
 ## Ingestion And Index Building
 
-Public-safe production evidence can be committed under `public_sources/`. Private source documents are not committed. Add approved local files under `documents/`, then run:
+Public-safe production evidence is committed under `public_sources/`, including the public career profile, project highlights, and recruiter question guide. Private source documents are not committed. Add approved local files under `documents/`, then run:
 
 ```bash
 python ingest.py
@@ -260,5 +260,4 @@ Anish Kulkarni
 
 - GitHub: `https://github.com/anish2k0703-collab`
 - LinkedIn: `https://www.linkedin.com/in/anish-kulkarni-7892bb247`
-
 

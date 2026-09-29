@@ -122,6 +122,12 @@ def friendly_source_title(chunk: RetrievedChunk) -> str:
     if "linkedin" in lowered:
         return "LinkedIn - Experience"
 
+    if "public_sources" in lowered and "career" in lowered:
+        return "Anish Kulkarni - Public Career Profile"
+
+    if "public_sources" in lowered and "recruiter" in lowered:
+        return "Ask Anish - Recruiter Question Guide"
+
     if "public_sources" in lowered and "project" in lowered:
         return "Anish Kulkarni - Public Project Highlights"
 
@@ -192,6 +198,12 @@ def supported_claim(chunk: RetrievedChunk) -> str:
         return "Resume-backed education, skills, experience, and project evidence."
     if "profile summary" in lowered_title:
         return "Verified profile summary details about Anish’s background and strengths."
+    if "public career profile" in lowered_title:
+        return "Public-safe career evidence covering education, experience, skills, leadership, and positioning."
+    if "recruiter question guide" in lowered_title:
+        return "Grounded guidance for recruiter-style questions, tough questions, and answer boundaries."
+    if "public project highlights" in lowered_title:
+        return "Approved project evidence, technologies, outcomes, and positioning."
 
     text = chunk.text.lower()
     if "education" in text or "university" in text or "graduation" in text:

@@ -1,3 +1,1 @@
-I’m Anish Kulkarni, an M.S. in Management Information Systems student at UIC with a background in computer science, analytics, cloud computing, and AI.
- As a Teaching Assistant, I enjoy helping students solve technical problems and aim to build a career at the intersection of business and technology.
-
+I’m Anish Kulkarni, an M.S. in Management Information Systems student at UIC with a B.Tech in Computer Science and Engineering from MIT-WPU. I work across analytics, AI/cloud applications, business analysis, and technical support. My experience includes UIC learning-technology migration work, Teaching Assistant support, MarTech analytics and cloud work at Hives Online India, and manufacturing analytics work at Msafe Solutions. I like translating business or operational problems into clear KPIs, data workflows, dashboards, and practical technical systems.
